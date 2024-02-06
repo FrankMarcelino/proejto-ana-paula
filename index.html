@@ -9,69 +9,57 @@ Tutorial: https://www.youtube.com/watch?v=zxxB9SFh9p4
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responda Não...</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
 
 <body>
-    <div id="conteudo">
-        <h2>bora pedalar hoje💪?</h2>
-        <div style="margin: auto;width: 170px;">
-            <button style="position: fixed;display: block;" class="btn" onclick="sim()">SIM</button>
-            <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)" style="position: absolute;">NÃO</button>
+    <div class="container-principal">
+        <h1>Proposta irrecusável!</h1>
+        <div class="container-abas">
+
+            <h3>Você recebeu ou quer enviar a proposta?</h3>
+
+            <input type="radio" name="tipo" value="salao" id="salao">
+            <label for="salao">Eu recebi!</label>
+
+
+            <input type="radio" name="tipo" value="zoom" id="zoom">
+            <label for="zoom">Quero enviar!</label>
+
+
+
+            <div class="contagem-conteudo" id="contagem-salao">
+
+                <div class="assistencia-salao">
+                    <h2>Te faço a seguinte proposta..</h2>
+                    <div id="conteudo">
+                        <h2>bora pedalar hoje💪?</h2>
+                        <div style="margin: auto;width: 170px;">
+                            <button style="position: fixed;display: block;" class="btn" onclick="sim()">SIM</button>
+                            <button class="btn" onclick="desvia(this)" onmouseover="desvia(this)"
+                                style="position: absolute;">NÃO</button>
+                        </div>
+                        <div class="container-h3">
+                            <h3>Após responder aguarde um pouco, a outra pagina irá carregar!</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="contagem-conteudo" id="contagem-zoom">
+
+                <div class="assistencia-zoom">
+                    <h2>Faça uma pergunta irrecusável para alguém!</h2>
+                    <div>
+                        <input type="text" placeholder="Digite sua pegunta aqui">
+                    </div>
+
+                </div>
+            </div>
         </div>
-        <div class="container-h3">
-            <h3>Após responder aguarde um pouco, a outra pagina irá carregar!</h3>
-        </div>
-    </div>
+
 </body>
-<style>
-    .container-h3 {
-        width: 300px;
-    }
-
-    h3 {
-        margin-top: 80px;
-    }
-    #conteudo {
-        background: #ff7a7a;
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding: 10px;
-        text-align: center;
-        font-family: sans-serif;
-    }
-
-    .btn {
-        background: black;
-        color: white;
-        border: none;
-        padding: 10px;
-        width: 80px;
-        border-radius: 5px;
-    }
-</style>
-
-<script>
-    function sim() {
-        // alert("Hoje tem! ;)");
-        // redireciona para um URL após clicar no SIM
-        location.href = "https://www.youtube.com/watch?v=btPJPFnesV4";
-    }
-
-    function desvia(btn) {
-        // btn declarado na função
-        btn.style.position = 'absolute';
-        btn.style.bottom = geraPosicao(10, 90);
-        btn.style.left = geraPosicao(10, 90);
-        console.log('opa, desviei...');
-    }
-
-    function geraPosicao(min, max) {
-        return (Math.random() * (max - min) + min) + "%";
-    }
-
-</script>
 
 </html>
